@@ -1,5 +1,5 @@
 {
-  "name": "SayMe!",
+  "name": "SayMe",
   "version": "0.0.1-2",
   "author": "",
   "dependencies": {
@@ -12,6 +12,6 @@
   },
   "devDependencies": {},
   "engines": {
-    "node": "0.8.x"
+    "node": "0.10.x"
   }
 }
