@@ -1,0 +1,53 @@
+<div class="hero-unit">
+    <h2>Lista de ActividadProfiles</h2>
+    <%- linkTo('Crear ActividadProfile', addActividadProfilePath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="actividadProfiles-list">
+    <table class="table-hover table table-bordered table-striped">
+        <thead>
+                                   
+        <th>actNombre</th>
+        
+                    
+                               
+        <th>actDescripcion</th>
+        
+                               
+        <th>actACTID</th>
+        
+                               
+        <th>actTipo</th>
+        
+                               
+        <th>actEstado</th>
+        
+        
+        <th>Operaciones</th>
+        </thead>
+        <tbody>
+            <% for (var i = 0, ii = actividadProfiles.length; i < ii; i++) { %>
+            <tr>
+                                                <td><%= actividadProfiles[i]['actNombre'] %></td>
+                
+                                
+                                                <td><%= actividadProfiles[i]['actDescripcion'] %></td>
+                
+                                                <td><%= actividadProfiles[i]['actACTID'] %></td>
+                
+                                                <td><%= actividadProfiles[i]['actTipo'] %></td>
+                
+                                                <td><%= actividadProfiles[i]['actEstado'] %></td>
+                
+                
+                <td>
+                    <form id="actividadProfile-form" class="form-horizontal" action="/actividad_profiles/<%= actividadProfiles[i]['id'] %>?_method=PUT" method="POST">
+                        <%- linkTo('Editar', editActividadProfilePath(actividadProfiles[i].id),{class: 'btn btn-primary'}) %>
+                        <%- contentTag('button', 'Borrar', {type: 'submit', formaction: '/actividad_profiles/' + actividadProfiles[i].id + '?_method=DELETE', formmethod: 'POST', class: 'btn btn-danger'}) %>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>

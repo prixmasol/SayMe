@@ -1,0 +1,51 @@
+<div class="control-group">
+  <label for="znNombre" class="control-label">Nombre</label>
+  <div class="controls">
+    <%- contentTag('input', zonaProfile.znNombre, {type:'text', class:'span6', name:'znNombre'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="znRGID" class="control-label">Región</label>
+  <div class="controls">
+    <%- selectTag(dataR, zonaProfile.znRGID, {onchange:'CargarCiudades()',  class:'span6', name:'znRGID', valueField: 'rgRGID', textField: 'rgNombre'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="znCTID" class="control-label">Ciudad</label>
+  <div class="controls">
+    <%- selectTag(dataC, zonaProfile.znCTID, {type:'text', class:'span6', name:'znCTID'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="znDescripcion" class="control-label">Descripcion</label>
+  <div class="controls">
+    <%- contentTag('textarea', zonaProfile.znDescripcion, {type:'text', class:'span6', name:'znDescripcion'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="znEstado" class="control-label">Estado</label>
+  <div class="controls">
+    <%- selectTag(['Activo','Inactivo'], zonaProfile.znEstado, {type:'text', class:'span6', name:'znEstado'}) %>
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	CargarCiudades();
+	
+});
+function CargarCiudades(){
+	var id = $("select[name='znRGID']").val();
+	$.getJSON("/ctbyrg/"+id, function(data){
+		$("select[name='znCTID']").html("");
+		$.each(data,function(e){
+					var opt = '<option value="'+data[e].ctCTID+'">'+data[e].ctNombre+'</option>';
+					$("select[name='znCTID']").append(opt);
+		});
+		var selected = "<%- zonaProfile.znCTID %>";
+		if(selected != "undefined"){
+			$("select[name='znCTID']").val(selected);
+		}
+	});
+}
+
+</script>

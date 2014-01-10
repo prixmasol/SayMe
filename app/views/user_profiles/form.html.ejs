@@ -1,0 +1,57 @@
+<div class="control-group">
+  <label for="upUserName" class="control-label">Nombre de usuario</label>
+  <div class="controls">
+    <%- contentTag('input', userProfile.upUserName, {type:'text', class:'span6', name:'upUserName'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="upNombre" class="control-label">Nombre</label>
+  <div class="controls">
+    <%- contentTag('input', userProfile.upNombre, {type:'text', class:'span6', name:'upNombre'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="upApellido" class="control-label">Apellido</label>
+  <div class="controls">
+    <%- contentTag('input', userProfile.upApellido, {type:'text', class:'span6', name:'upApellido'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="upIdentificacion" class="control-label">Identificacion</label>
+  <div class="controls">
+    <%- contentTag('input', userProfile.upIdentificacion, {type:'text', class:'span6', name:'upIdentificacion'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="upCorreo" class="control-label">Correo</label>
+  <div class="controls">
+    <%- contentTag('input', userProfile.upCorreo, {type:'text', class:'span6', name:'upCorreo'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="upPassword" class="control-label">Password</label>
+  <div class="controls">
+    <%- contentTag('input', userProfile.upPassword, {type:'text', class:'span6', name:'upPassword'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="confirmPassword" class="control-label">Confirmar Password</label>
+  <div class="controls">
+    <%- contentTag('input', userProfile.confirmPassword, {type:'text', class:'span6', name:'confirmPassword'}) %>
+  </div>
+</div>
+
+<div class="control-group">
+  <label for="upUserType" class="control-label">Tipo Usuario</label>
+  <div class="controls">
+		<%- selectTag(['Educador', 'Administrador', 'Desarrollador'],userProfile.upUserType,{name:'upUserType'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="upEstado" class="control-label">Estado</label>
+  <div class="controls">
+		<%- selectTag(['Activo', 'Inactivo'],userProfile.upEstado,{name:'upEstado'}) %>
+   
+  </div>
+</div>
+

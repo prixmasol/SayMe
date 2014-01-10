@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All CiudadProfiles</h2>
+  <%- linkTo('Create a new CiudadProfile', addCiudadProfilePath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="ciudadProfiles-list">
+<% if (ciudadProfiles) { %>
+<% for (var i = 0, ii = ciudadProfiles.length; i < ii; i++) { %>
+  <div class="row list-item" id="ciudadProfile-<%= ciudadProfiles[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(ciudadProfiles[i].ctNombre, ciudadProfilePath(ciudadProfiles[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= ciudadProfiles[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>

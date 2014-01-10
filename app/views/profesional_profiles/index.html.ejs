@@ -1,0 +1,21 @@
+<div class="hero-unit">
+  <h2>Profesionales de la Salud</h2>
+  <%- linkTo('Create a new ProfesionalProfile', addProfesionalProfilePath, {class: 'btn pull-right'}); %>
+</div>
+<% if (params) { %>
+    <%= params.id %>
+<% } %>
+<div id="profesionalProfiles-list">
+<% if (profesionalProfiles) { %>
+<% for (var i = 0, ii = profesionalProfiles.length; i < ii; i++) { %>
+  <div class="row list-item" id="profesionalProfile-<%= profesionalProfiles[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(profesionalProfiles[i].psFullName, profesionalProfilePath(profesionalProfiles[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= profesionalProfiles[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>

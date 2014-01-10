@@ -1,0 +1,24 @@
+<div class="control-group">
+  <label for="entNombre" class="control-label">Nombre</label>
+  <div class="controls">
+    <%- contentTag('input', entidadProfile.entNombre, {type:'text', class:'span6', name:'entNombre'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="entENTID" class="control-label">ENTID</label>
+  <div class="controls">
+    <%- contentTag('input', entidadProfile.entENTID, {type:'text', class:'span6', name:'entENTID'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="entDescripcion" class="control-label">Descripcion</label>
+  <div class="controls">
+    <%- contentTag('textarea', entidadProfile.entDescripcion, {class: 'span6', name: 'entDescripcion', rows: 10}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="entEstado" class="control-label">Estado</label>
+  <div class="controls">
+    <%- selectTag(['Activo','Inactivo'], entidadProfile.entEstado, {type:'text', class:'span6', name:'entEstado'}) %>
+  </div>
+</div>

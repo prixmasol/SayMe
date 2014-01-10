@@ -1,0 +1,18 @@
+<div class="hero-unit">
+  <h2 class="psFullName"><%= profesionalProfile.psFullName %></h2>
+  <%- linkTo('Edit this profesionalProfile', editProfesionalProfilePath(params.id), {class: 'btn pull-right'}); %>
+  <%- linkTo('Back to list', profesionalProfilePath(''), {class: 'btn pull-right'}); %>
+</div>
+
+<h2>ProfesionalProfile Properties</h2>
+<% for(var i in profesionalProfile) { -%>
+<% if(i !== 'saved') { -%>
+<div class="row list-item">
+  <div class="span4">
+    <h3><%= i %></h3>
+  </div>
+  <div class="span8">
+    <h3><i class="icon-list-alt"></i><span class="<%= i %>"><%= profesionalProfile[i] %></span></h3>
+  </div>
+</div>
+<% } -%><% } -%>

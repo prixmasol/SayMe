@@ -1,0 +1,24 @@
+<div class="control-group">
+  <label for="potNombre" class="control-label">Nombre</label>
+  <div class="controls">
+    <%- contentTag('input', potencialProfile.potNombre, {type:'text', class:'span6', name:'potNombre'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="potPOTID" class="control-label">POTID</label>
+  <div class="controls">
+    <%- contentTag('input', potencialProfile.potPOTID, {type:'text', class:'span6', name:'potPOTID'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="potDescripcion" class="control-label">Descripcion</label>
+  <div class="controls">
+    <%- contentTag('textarea', potencialProfile.potDescripcion, {class: 'span6', name: 'potDescripcion', rows: 10}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="potEstado" class="control-label">Estado</label>
+  <div class="controls">
+    <%- selectTag(['Activo','Inactivo'], potencialProfile.potEstado, {type:'text', class:'span6', name:'potEstado'}) %>
+  </div>
+</div>

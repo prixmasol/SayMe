@@ -1,0 +1,22 @@
+<div class="hero-unit">
+  <form id="profesionalTimeTable-form" class="form-horizontal" action="/profesional_time_tables" method="POST">
+    <fieldset>
+      <legend>Create a new ProfesionalTimeTable</legend>
+      <% if(params.errors) { %>
+      <div class="control-group">
+        <ul>
+        <% for(var err in params.errors) { %>
+          <li><%= params.errors[err]; %></li>
+        <% } %>
+        </ul>
+      </div>
+      <% } %>
+
+      <%- partial('form', {profesionalTimeTable: params}) %>
+
+      <div class="form-actions">
+        <%- contentTag('input', 'Add', {type: 'submit', class: 'btn btn-primary'}) %>
+      </div>
+    </fieldset>
+  </form>
+</div>

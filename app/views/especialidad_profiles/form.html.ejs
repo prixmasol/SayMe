@@ -1,0 +1,24 @@
+<div class="control-group">
+  <label for="epNombre" class="control-label">Nombre</label>
+  <div class="controls">
+    <%- contentTag('input', especialidadProfile.epNombre, {type:'text', class:'span6', name:'epNombre'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="epEPID" class="control-label">EPID</label>
+  <div class="controls">
+    <%- contentTag('input', especialidadProfile.epEPID, {type:'text', class:'span6', name:'epEPID'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="epDescripcion" class="control-label">Descripcion</label>
+  <div class="controls">
+    <%- contentTag('textarea', especialidadProfile.epDescripcion, {class: 'span6', name: 'epDescripcion', rows: 10}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="epEstado" class="control-label">Estado</label>
+  <div class="controls">
+    <%- selectTag(['Activo','Inactivo'], especialidadProfile.epEstado, {type:'text', class:'span6', name:'epEstado'}) %>
+  </div>
+</div>

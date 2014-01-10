@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All MaestroProfiles</h2>
+  <%- linkTo('Create a new MaestroProfile', addMaestroProfilePath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="maestroProfiles-list">
+<% if (maestroProfiles) { %>
+<% for (var i = 0, ii = maestroProfiles.length; i < ii; i++) { %>
+  <div class="row list-item" id="maestroProfile-<%= maestroProfiles[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(maestroProfiles[i].mPNombre, maestroProfilePath(maestroProfiles[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= maestroProfiles[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>

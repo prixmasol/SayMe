@@ -1,0 +1,22 @@
+<div class="hero-unit">
+  <form id="profesionalProfile-form" class="form-horizontal" action="/profesional_profiles" method="POST">
+    <fieldset>
+      <legend>Create a new ProfesionalProfile</legend>
+      <% if(params.errors) { %>
+      <div class="control-group">
+        <ul>
+        <% for(var err in params.errors) { %>
+          <li><%= params.errors[err]; %></li>
+        <% } %>
+        </ul>
+      </div>
+      <% } %>
+			<div class="accordion" id="accordion2">
+				<%- partial('form', {profesionalProfile: params, DatosCombo: rels}) %>
+			</div>
+			<div class="form-actions">
+        <%- contentTag('input', 'Guardar', {type: 'submit', class: 'btn btn-primary'}) %>
+      </div>
+		</fieldset>
+  </form>
+</div>

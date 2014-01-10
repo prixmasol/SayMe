@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All IpsProfiles</h2>
+  <%- linkTo('Create a new IpsProfile', addIpsProfilePath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="ipsProfiles-list">
+<% if (ipsProfiles) { %>
+<% for (var i = 0, ii = ipsProfiles.length; i < ii; i++) { %>
+  <div class="row list-item" id="ipsProfile-<%= ipsProfiles[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(ipsProfiles[i].ipsNombre, ipsProfilePath(ipsProfiles[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= ipsProfiles[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>

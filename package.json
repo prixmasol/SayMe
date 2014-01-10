@@ -1,0 +1,17 @@
+{
+  "name": "SayMe!",
+  "version": "0.0.1-2",
+  "author": "",
+  "dependencies": {
+    "moment": "~2.5.0",
+    "mongodb": "1.3.x"
+  },
+  "subdomain": "sayme",
+  "scripts": {
+    "start": "app.js"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "0.8.x"
+  }
+}

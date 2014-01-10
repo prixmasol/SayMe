@@ -1,0 +1,18 @@
+<div class="hero-unit">
+  <h2 class="entNombre"><%= entidadProfile.entNombre %></h2>
+  <%- linkTo('Edit this entidadProfile', editEntidadProfilePath(params.id), {class: 'btn pull-right'}); %>
+  <%- linkTo('Back to list', entidadProfilePath(''), {class: 'btn pull-right'}); %>
+</div>
+
+<h2>EntidadProfile Properties</h2>
+<% for(var i in entidadProfile) { -%>
+<% if(i !== 'saved') { -%>
+<div class="row list-item">
+  <div class="span4">
+    <h3><%= i %></h3>
+  </div>
+  <div class="span8">
+    <h3><i class="icon-list-alt"></i><span class="<%= i %>"><%= entidadProfile[i] %></span></h3>
+  </div>
+</div>
+<% } -%><% } -%>

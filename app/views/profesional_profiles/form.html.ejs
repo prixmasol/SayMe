@@ -1,0 +1,193 @@
+
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1">
+				Datos Personales
+			</a>
+		</div>
+		<div id="collapse1" class="accordion-body collapse in">
+			<div class="accordion-inner">
+	
+				<div class="control-group">
+					<label for="psDocumento" class="control-label">No Identificación</label>
+					<div class="controls">
+						<%- contentTag('input', profesionalProfile.psDocumento, {type:'text', class:'span6', name:'psDocumento'}) %>
+					</div>
+				</div>
+	
+				<div class="control-group">
+					<label for="psNombre" class="control-label">Nombre</label>
+					<div class="controls">
+						<%- contentTag('input', profesionalProfile.psNombre, {type:'text', class:'span6', name:'psNombre'}) %>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label for="psApellido" class="control-label">Apellido</label>
+					<div class="controls">
+						<%- contentTag('input', profesionalProfile.psApellido, {type:'text', class:'span6', name:'psApellido'}) %>
+					</div>
+				</div>
+	
+				<div class="control-group">
+					<label for="psNacimiento" class="control-label">Fecha de Nacimiento</label>
+					<div class="controls">
+						<%- contentTag('input', profesionalProfile.psNacimiento, {onblur: 'CalculateDateDiff()',type:'date', class:'span6', name:'psNacimiento'}) %>
+					</div>
+				</div>
+	
+				<div class="control-group">
+					<label for="psEdad" class="control-label">Edad</label>
+					<div class="controls">
+						<%- contentTag('input', profesionalProfile.psEdad, {type:'number', class:'span6', name:'psEdad'}) %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
+				Datos Profesionales
+			</a>
+		</div>
+		<div id="collapse2" class="accordion-body collapse in">
+			<div class="accordion-inner">
+				<div class="control-group">
+					<label for="psIPSID" class="control-label">IPS</label>
+					<div class="controls">
+						<%- selectTag(DatosCombo['IPS'], profesionalProfile.psIPSID, {type:'text', class:'span6', name:'psIPSID',valueField: 'ipsIPSID' , textField: 'ipsNombre'}) %>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label for="psENTID" class="control-label">Entidad</label>
+					<div class="controls">
+						<%- selectTag(DatosCombo['Entidades'], profesionalProfile.psENTID, {type:'text', class:'span6', name:'psENTID',valueField: 'entENTID' , textField: 'entNombre'}) %>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label for="psEPID" class="control-label">Especialidad</label>
+					<div class="controls">
+						<%- selectTag(DatosCombo['Especialidades'], profesionalProfile.psEPID, {type:'text', class:'span6', name:'psEPID',valueField: 'epEPSID' , textField: 'epNombre'}) %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
+				Datos Geograficos
+			</a>
+		</div>
+		<div id="collapse3" class="accordion-body collapse in">
+			<div class="accordion-inner">
+				<div class="control-group">
+					<label for="psRGID" class="control-label">Region</label>
+					<div class="controls">
+						<%- selectTag(DatosCombo['Regiones'], profesionalProfile.psRGID, {onchange: 'CargarCiudades()',type:'text', class:'span6', name:'psRGID',valueField: 'rgRGID' , textField: 'rgNombre'}) %>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label for="psCTID" class="control-label">Ciudad</label>
+					<div class="controls">
+						<%- selectTag([], profesionalProfile.psCTID, {onchange: 'CargarZonas()',type:'text', class:'span6', name:'psCTID',valueField: 'ctCTID' , textField: 'ctNombre'}) %>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label for="psZNID" class="control-label">Zona</label>
+					<div class="controls">
+						<%- selectTag([], profesionalProfile.psZNID, {type:'text', class:'span6', name:'psZNID',valueField: 'znZNID' , textField: 'znNombre'}) %>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label for="psDireccion" class="control-label">Direccion</label>
+					<div class="controls">
+						<%- contentTag('input', profesionalProfile.psDireccion, {type:'text', class:'span6', name:'psDireccion'}) %>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label for="psTelefono" class="control-label">Telefono</label>
+					<div class="controls">
+						<%- contentTag('input', profesionalProfile.psTelefono, {type:'text', class:'span6', name:'psTelefono'}) %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
+				Administración
+			</a>
+		</div>
+		<div id="collapse4" class="accordion-body collapse in">
+			<div class="accordion-inner">	
+				<div class="control-group">
+					<label for="psDobleImpacto" class="control-label">Doble Impacto</label>
+					<div class="controls">
+						<%- selectTag(['Si','No'], profesionalProfile.psDobleImpacto, {type:'text', class:'span6', name:'psDobleImpacto'}) %>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label for="psEstado" class="control-label">Estado</label>
+					<div class="controls">
+						<%- selectTag(['Creado','Aprobado','Descativado','Pendiente Inactivación'], profesionalProfile.psEstado, {type:'text', class:'span6', name:'psEstado'}) %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+<%- scriptLink('/js/moment.min.js', {type:'text/javascript'}) %>
+<script type="text/javascript">
+function CalculateDateDiff() {
+	
+	alert($("[name='psNacimiento']").val());
+	
+    $("[name='psEdad']").val();
+}
+$(document).ready(function(){
+	CargarCiudades();
+	
+});
+function CargarCiudades(){
+	var id = $("select[name='psRGID']").val();
+	$.getJSON("/ctbyrg/"+id, function(data){
+		$("select[name='psCTID']").html("");
+		$.each(data,function(e){
+					var opt = '<option value="'+data[e].ctCTID+'">'+data[e].ctNombre+'</option>';
+					$("select[name='psCTID']").append(opt);
+		});
+		var selected = "<%- profesionalProfile.psCTID %>";
+		if(selected != "undefined"){
+			$("select[name='psCTID']").val(selected);
+		}
+		CargarZonas();
+		
+	});
+}
+function CargarZonas(){
+	var id = $("select[name='psCTID']").val();
+	$.getJSON("/znbyct/"+id, function(data){
+		$("select[name='psZNID']").html("");
+		$.each(data,function(e){
+					var opt = '<option value="'+data[e].id+'">'+data[e].znNombre+'</option>';
+					$("select[name='psZNID']").append(opt);
+		});
+		var selected = "<%- profesionalProfile.psZNID %>";
+		if(selected != "undefined"){
+			$("select[name='psZNID']").val(selected);
+		}
+	});
+}
+
+</script>

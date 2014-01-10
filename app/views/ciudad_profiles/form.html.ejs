@@ -1,0 +1,30 @@
+<div class="control-group">
+  <label for="ctCTID" class="control-label">Codigo</label>
+  <div class="controls">
+    <%- contentTag('input', ciudadProfile.ctCTID, {type:'text', class:'span6', name:'ctCTID'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="ctNombre" class="control-label">Nombre</label>
+  <div class="controls">
+    <%- contentTag('input', ciudadProfile.ctNombre, {type:'text', class:'span6', name:'ctNombre'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="ctDescripcion" class="control-label">Descripcion</label>
+  <div class="controls">
+    <%- contentTag('textarea', ciudadProfile.ctDescripcion, {type:'text', class:'span6', name:'ctDescripcion'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="ctRGID" class="control-label">Región</label>
+  <div class="controls">
+    <%- selectTag(regiones, ciudadProfile.ctRGID, {type:'text', class:'span6', name:'ctRGID', valueField: 'rgRGID', textField: 'rgNombre'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="ctEstado" class="control-label">Estado</label>
+  <div class="controls">
+    <%- selectTag(['Activo','Inactivo'], ciudadProfile.ctEstado, {type:'text', class:'span6', name:'ctEstado'}) %>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="hero-unit">
+  <form id="actividadProfile-form" class="form-horizontal" action="/actividad_profiles" method="POST">
+    <fieldset>
+      <legend>Crear ActividadProfile</legend>
+      <% if(params.errors) { %>
+      <div class="control-group">
+        <ul>
+        <% for(var err in params.errors) { %>
+          <li><%= params.errors[err]; %></li>
+        <% } %>
+        </ul>
+      </div>
+      <% } %>
+
+      <%- partial('form', {actividadProfile: params}) %>
+
+      <div class="form-actions">
+        <%- contentTag('button', 'Guardar', {type: 'submit', class: 'btn btn-primary'}) %>
+      </div>
+    </fieldset>
+  </form>
+</div>

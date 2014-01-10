@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All MenuProfiles</h2>
+  <%- linkTo('Create a new MenuProfile', addMenuProfilePath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="menuProfiles-list">
+<% if (menuProfiles) { %>
+<% for (var i = 0, ii = menuProfiles.length; i < ii; i++) { %>
+  <div class="row list-item" id="menuProfile-<%= menuProfiles[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(menuProfiles[i].id, menuProfilePath(menuProfiles[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= menuProfiles[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>

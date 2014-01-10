@@ -1,0 +1,30 @@
+<div class="control-group">
+  <label for="actNombre" class="control-label">actNombre</label>
+  <div class="controls">
+                        <%- contentTag('input', actividadProfile.actNombre, {type:'text', class:'span6', name:'actNombre'}) %>
+              </div>
+</div>
+<div class="control-group">
+  <label for="actDescripcion" class="control-label">actDescripcion</label>
+  <div class="controls">
+    <%- contentTag('textarea', actividadProfile.actDescripcion, {class: 'span6', name: 'actDescripcion', rows: 10}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="actACTID" class="control-label">actACTID</label>
+  <div class="controls">
+                        <%- contentTag('input', actividadProfile.actACTID, {type:'text', class:'span6', name:'actACTID'}) %>
+              </div>
+</div>
+<div class="control-group">
+  <label for="actTipo" class="control-label">actTipo</label>
+  <div class="controls">
+                        <%- contentTag('input', actividadProfile.actTipo, {type:'text', class:'span6', name:'actTipo'}) %>
+              </div>
+</div>
+<div class="control-group">
+  <label for="actEstado" class="control-label">actEstado</label>
+  <div class="controls">
+                        <%- selectTag(['Activo','Inactivo'], actividadProfile.actEstado, {class:'span6', name:'actEstado'}) %>
+              </div>
+</div>

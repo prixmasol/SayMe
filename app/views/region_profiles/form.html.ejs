@@ -1,0 +1,24 @@
+<div class="control-group">
+  <label for="rgNombre" class="control-label">Nombre</label>
+  <div class="controls">
+    <%- contentTag('input', regionProfile.rgNombre, {type:'text', class:'span6', name:'rgNombre'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="rgRGID" class="control-label">RGID</label>
+  <div class="controls">
+    <%- contentTag('input', regionProfile.rgRGID, {type:'text', class:'span6', name:'rgRGID'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="rgDescripcion" class="control-label">Descripcion</label>
+  <div class="controls">
+    <%- contentTag('textarea', regionProfile.rgDescripcion, {class: 'span6', name: 'rgDescripcion', rows: 10}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="rgEstado" class="control-label">Estado</label>
+  <div class="controls">
+    <%- selectTag(['Activo','Inactivo'], regionProfile.rgEstado, {type:'text', class:'span6', name:'rgEstado'}) %>
+  </div>
+</div>

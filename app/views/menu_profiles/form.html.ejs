@@ -1,0 +1,34 @@
+<div class="control-group">
+  <label for="mECodOP" class="control-label">Opción</label>
+  <div class="controls">
+	<%- selectTag(pOpcion, menuProfile.mECodOP, {
+      name: 'mECodOP'
+    , valueField: 'mPCodigo'
+    , textField: 'mPNombre'
+    }); %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="mECodTU" class="control-label">Tipo de Usuario</label>
+  <div class="controls">
+   <%- selectTag(pTU, menuProfile.mECodTU, {
+      name: 'mECodTU'
+    , valueField: 'mPCodigo'
+    , textField: 'mPNombre'
+    }); %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="mEOperacion" class="control-label">Operación</label>
+  <div class="controls">
+    <%- selectTag(
+			[
+				{text: 'Crear',value:'C'},
+				{text:'Consultar',value:'R'},
+				{text:'Editar',value:'U'}, 
+				{text:'Borrar', value:'D'}
+			],
+			menuProfile.mEOperacion,
+			{name: 'mEOperacion'}); %>
+  </div>
+</div>

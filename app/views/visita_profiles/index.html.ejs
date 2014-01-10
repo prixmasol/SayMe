@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All VisitaProfiles</h2>
+  <%- linkTo('Create a new VisitaProfile', addVisitaProfilePath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="visitaProfiles-list">
+<% if (visitaProfiles) { %>
+<% for (var i = 0, ii = visitaProfiles.length; i < ii; i++) { %>
+  <div class="row list-item" id="visitaProfile-<%= visitaProfiles[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(visitaProfiles[i].id, visitaProfilePath(visitaProfiles[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= visitaProfiles[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>
